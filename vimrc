@@ -132,3 +132,36 @@ nmap <C-n> :NERDTreeToggle<CR>
     " nmap <Leader>a, :Tabularize /,<CR>
     " vmap <Leader>a, :Tabularize /,<CR>
 " endif
+
+" ----------For-Atlas-Athena---------- "
+" if exists("~/.vim/in.vim")
+    so /home/yindefu/.vim/in.vim
+" endif
+
+" ----------Autowitre---------- "
+autocmd BufNewFile *.py,*.sh exec ":call WriteInfo()"
+func! WriteInfo()
+    if &filetype == 'python'
+        call setline(1,"#!/usr/bin/python3")
+        call append(line("."),"")
+        call append(line(".")+1,"###################################################################")
+        call append(line(".")+2,"#    File name     : ".expand("%:t"))
+        call append(line(".")+3,"#    Author        : doggy")
+        call append(line(".")+4,"#    Date          : ".strftime("%c"))
+        call append(line(".")+5,"#    Description   : ")
+        call append(line(".")+6,"###################################################################")
+        call append(line(".")+7,"")
+        call append(line(".")+8,"")
+    elseif &filetype == 'sh'
+        call setline(1,"#!/bin/bash")
+        call append(line("."),"")
+        call append(line(".")+1,"###################################################################")
+        call append(line(".")+2,"#    File name     : ".expand("%:t"))
+        call append(line(".")+3,"#    Author        : doggy")
+        call append(line(".")+4,"#    Date          : ".strftime("%c"))
+        call append(line(".")+5,"#    Description   : ")
+        call append(line(".")+6,"###################################################################")
+        call append(line(".")+7,"")
+        call append(line(".")+8,"")
+    endif
+endfunc
