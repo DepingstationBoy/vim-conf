@@ -21,6 +21,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
 " Plugin 'valloric/youcompleteme'
 " Plugin 'nvie/vim-flake8'
 call vundle#end()                                                         " All of your Plugins must be added before the following line
@@ -165,3 +167,6 @@ func! WriteInfo()
         call append(line(".")+8,"")
     endif
 endfunc
+
+" ----------Color Scheme---------- "
+colorscheme vividchalk
