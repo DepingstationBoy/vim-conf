@@ -23,6 +23,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'vim-scripts/c.vim'
 " Plugin 'valloric/youcompleteme'
 " Plugin 'nvie/vim-flake8'
 call vundle#end()                                                         " All of your Plugins must be added before the following line
@@ -163,6 +164,17 @@ func! WriteInfo()
         call append(line(".")+4,"#    Date          : ".strftime("%c"))
         call append(line(".")+5,"#    Description   : ")
         call append(line(".")+6,"###################################################################")
+        call append(line(".")+7,"")
+        call append(line(".")+8,"")
+    elseif &filetype == 'c'
+        call setline(1,"/*  */")
+        call append(line("."),"")
+        call append(line(".")+1,"/*******************************************************************")
+        call append(line(".")+2,"*    File name     : ".expand("%:t"))
+        call append(line(".")+3,"*    Author        : doggy")
+        call append(line(".")+4,"*    Date          : ".strftime("%c"))
+        call append(line(".")+5,"*    Description   : ")
+        call append(line(".")+6,"******************************************************************/")
         call append(line(".")+7,"")
         call append(line(".")+8,"")
     endif
